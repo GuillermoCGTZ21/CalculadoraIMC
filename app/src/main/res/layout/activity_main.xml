@@ -31,7 +31,7 @@
                 android:layout_height="wrap_content"
                 android:inputType="numberDecimal"
                 android:ems="10"
-                android:id="@+id/TXTPESO" />
+                android:id="@+id/etPeso" />
         </LinearLayout>
 
         <LinearLayout
@@ -51,7 +51,7 @@
                 android:layout_height="wrap_content"
                 android:inputType="numberDecimal"
                 android:ems="10"
-                android:id="@+id/TXTESTATURA" />
+                android:id="@+id/etEstatura" />
         </LinearLayout>
 
         <LinearLayout
@@ -69,13 +69,20 @@
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
 
             <TextView
                 android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                android:text="New Text"
-                android:id="@+id/TXTIMPRIMIR" />
+                android:layout_height="163dp"
+                android:id="@+id/tuResultado" />
+
         </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:id="@+id/TXTIMPRIMIR"
+            android:layout_gravity="center_horizontal" />
     </LinearLayout>
 </RelativeLayout>

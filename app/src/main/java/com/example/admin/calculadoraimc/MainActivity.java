@@ -1,5 +1,6 @@
 package com.example.admin.calculadoraimc;
 
+
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -13,18 +14,23 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
-    public void CALCULAR (View view) {
-        TextView TXTESTATURA = (EditText) findViewById(R.id.TXTESTATURA);
-        TextView TXTPESO = (EditText) findViewById(R.id.TXTPESO);
 
-        double ESTATURA = Double.parseDouble(TXTESTATURA.getText().toString());
-        double PESO = Double.parseDouble(TXTPESO.getText().toString());
+    public void calcular(View view) {
+        EditText peso = (EditText) findViewById(R.id.etPeso);
+        String stringPeso = peso.getText().toString().trim();
+        float valorPeso = Float.parseFloat(stringPeso);
 
-        double resultado = PESO / (Math.pow(ESTATURA, 2));
+        EditText altura = (EditText) findViewById(R.id.etEstatura);
+        String stringAltura = altura.getText().toString().trim();
+        float valorAltura = Float.parseFloat(stringAltura) / 100;
 
-        TextView TXTIMPRIMIR = (TextView) findViewById(R.id.TXTIMPRIMIR);
+        float resultado = valorPeso / (valorAltura * valorAltura);
 
+        TextView tuResultado = (TextView) findViewById(R.id.tuResultado);
+        assert tuResultado != null;
+        tuResultado.setText("Tu resultado es " + resultado + " de IMC");
 
+        TextView TXTIMPRIMIR = null;
         if (resultado < 18) {
             TXTIMPRIMIR.setText("PESO BAJO");
         } else if (resultado < 24.9) {
@@ -38,4 +44,14 @@ public class MainActivity extends AppCompatActivity {
         } else if (resultado > 40) {
             TXTIMPRIMIR.setText("OBESIDAD GRADO 3");
         }
-    }}
+
+    }
+}
+
+
+
+
+
+
+
+
