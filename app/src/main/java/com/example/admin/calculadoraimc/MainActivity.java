@@ -30,25 +30,23 @@ public class MainActivity extends AppCompatActivity {
         assert tuResultado != null;
         tuResultado.setText("Tu resultado es " + resultado + " de IMC");
 
-        TextView TXTIMPRIMIR = null;
+        TextView txtimprimir = (TextView) findViewById(R.id.txtimprimir);
         if (resultado < 18) {
-            TXTIMPRIMIR.setText("PESO BAJO");
+            txtimprimir.setText("PESO BAJO");
         } else if (resultado < 24.9) {
-            TXTIMPRIMIR.setText("NORMAL");
+            txtimprimir.setText("NORMAL");
         } else if (resultado < 26.9) {
-            TXTIMPRIMIR.setText("SOBREPESO");
+            txtimprimir.setText("SOBREPESO");
         } else if (resultado < 29.9) {
-            TXTIMPRIMIR.setText("OBESIDAD GRADO 1");
+            txtimprimir.setText("OBESIDAD GRADO 1");
         } else if (resultado < 39.9) {
-            TXTIMPRIMIR.setText("OBESIDAD GRADO 2");
+            txtimprimir.setText("OBESIDAD GRADO 2");
         } else if (resultado > 40) {
-            TXTIMPRIMIR.setText("OBESIDAD GRADO 3");
+            txtimprimir.setText("OBESIDAD GRADO 3");
         }
 
     }
 }
-
-
 
 
 
